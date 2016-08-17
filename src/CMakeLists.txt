@@ -26,9 +26,7 @@ SET(spatialitecpp_hdr
     "${spatialitecpp_dir}/include/SpatiaLiteCpp/SpatiaLiteCppAbi.h"
     "${spatialitecpp_dir}/include/SpatiaLiteCpp/VectorLayersList.h"
     "${spatialitecpp_dir}/include/SpatiaLiteCpp/WfsCatalog.h"
-    "${spatialitecpp_dir}/include/SpatiaLiteCpp/WfsSchema.h"
-    "${spatialitecpp_dir}/include/SpatiaLiteCpp/XmlBlob.h"
-    "${spatialitecpp_dir}/include/SpatiaLiteCpp/XmlDocument.h")
+    "${spatialitecpp_dir}/include/SpatiaLiteCpp/WfsSchema.h")
 
 # ==================================================
 # Set source files
@@ -54,9 +52,20 @@ SET(spatialitecpp_src
     "${spatialitecpp_dir}/src/Shapefile.cpp"
     "${spatialitecpp_dir}/src/VectorLayersList.cpp"
     "${spatialitecpp_dir}/src/WfsCatalog.cpp"
-    "${spatialitecpp_dir}/src/WfsSchema.cpp"
-    "${spatialitecpp_dir}/src/XmlBlob.cpp"
-    "${spatialitecpp_dir}/src/XmlDocument.cpp")
+    "${spatialitecpp_dir}/src/WfsSchema.cpp")
+
+# ==================================================
+# Set xml2 specific files
+# --------------------------------------------------
+
+IF(${SPATIALITECPP_USE_LIBXML2})
+    LIST(APPEND spatialitecpp_hdr
+        "${spatialitecpp_dir}/include/SpatiaLiteCpp/XmlBlob.h"
+        "${spatialitecpp_dir}/include/SpatiaLiteCpp/XmlDocument.h")
+    LIST(APPEND spatialitecpp_src
+        "${spatialitecpp_dir}/src/XmlBlob.cpp"
+        "${spatialitecpp_dir}/src/XmlDocument.cpp")
+ENDIF()
 
 # ==================================================
 # Set documentation files

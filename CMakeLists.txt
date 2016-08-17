@@ -13,6 +13,7 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 # Check for command line arguments
 # ----------------------------------------------------------------------
 
+OPTION(SPATIALITECPP_USE_LIBXML2 "Expect libxml2 from spatialite" ON)
 OPTION(SPATIALITECPP_BUILD_EXAMPLES "Build examples project" OFF)
 OPTION(SPATIALITECPP_BUILD_DYNAMIC "Build as dynamic library" OFF)
 OPTION(SPATIALITECPP_BUILD_TEST "Build as test project" OFF)
